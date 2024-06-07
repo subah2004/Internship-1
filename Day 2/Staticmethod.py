@@ -1,5 +1,6 @@
 #This code checks if the number is even or odd.
-#This is code also keeps the value static
+#This code checks if the number is prime or not.
+#The methods are static.
 
 class MathsUtilities:
     @staticmethod

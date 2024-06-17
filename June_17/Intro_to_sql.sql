@@ -39,3 +39,16 @@ TRUNCATE TABLE Inventory;
 
 ALTER TABLE Movies
 MODIFY COLUMN title VARCHAR(50);
+
+ALTER TABLE Movies
+MODIFY COLUMN Duration INT;
+
+
+UPDATE Movies
+SET Duration = 136
+WHERE movie_id = 1;
+
+
+UPDATE Movies
+SET Duration = 120
+WHERE movie_id = 2;

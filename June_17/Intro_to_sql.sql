@@ -5,7 +5,7 @@ USE MOVIE_RENTAL;
 CREATE TABLE Customers(customer_id INT PRIMARY KEY,first_name VARCHAR(45),last_name VARCHAR(45),email VARCHAR(100),date_of_birth DATE,membership_date DATE);
 CREATE TABLE Movies(movie_id INT PRIMARY KEY,title VARCHAR(100),genre VARCHAR(50),release_year INT,rating VARCHAR(10) )
 
-CREATE TABLE Rental(rental_id INT PRIMARY KEY,customer_id int ,movie_id INT,rental_date DATE,return_date DATE,FOREIGN KEY(customer_id) REFERENCES Customers(customer_id) ,FOREIGN KEY(movie_id) REFERENCES Movies(movie_id) );
+CREATE TABLE Rental(rental_id INT PRIMARY KEY,customer_id int ,movie_id INT,rental_date DATE,return_date DATE, cost DECIMAL(5, 2),FOREIGN KEY(customer_id) REFERENCES Customers(customer_id) ,FOREIGN KEY(movie_id) REFERENCES Movies(movie_id) );
 
 CREATE TABLE Staff (staff_id INT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(50),email VARCHAR(100),position VARCHAR(50));
 
@@ -21,6 +21,12 @@ INSERT INTO Movies (movie_id, title, genre, release_year, rating) VALUES (2, 'DU
 CREATE TABLE Inventory (inventory_id INT PRIMARY KEY,movie_id INT,store_id INT,available BOOLEAN,FOREIGN KEY (movie_id) REFERENCES Movies(movie_id));
 
 INSERT INTO Inventory (inventory_id, movie_id, store_id, available) VALUES (1, 1, 101, TRUE);
+
+INSERT INTO Rental (rental_id, customer_id, movie_id, rental_date, return_date,cost) 
+VALUES 
+(1, 1, 1, '2023-06-01', '2023-06-10',450),
+(2, 1, 2, '2023-06-15', '2023-06-20',210);
+
 
 /*Show tables*/
 

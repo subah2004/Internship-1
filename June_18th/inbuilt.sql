@@ -43,4 +43,9 @@ SELECT CURRENT_DATE() as today;
 -- B) DATEDIFF(date1, date2)
 SELECT DATEDIFF("2024-07-20","2024-06-20");
 
--- C) DATE(expression):
+-- C) CURRENT_TIME()
+SELECT CURRENT_TIME() as today;
+
+-- D) LAST_DAY(date):
+SELECT LAST_DAY("2024-07-01") AS Last_day_of_month;
+
